@@ -1,0 +1,26 @@
+*{
+    box-sizing: border-box;
+}
+
+.card{
+    width: 200px;
+    background-color: green;
+    border-radius: 12px;
+    border: 2px solid black;
+    margin: 10px 0;
+}
+
+.card h1{
+    text-align: center;
+    padding: 5px 0;
+}
+
+.card p{
+    padding: 5px 0;
+    text-align: center;
+}
+
+ .card button{
+    border-radius: 12px;
+    text-align: center;
+}
