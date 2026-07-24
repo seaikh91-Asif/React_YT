@@ -1,9 +1,11 @@
 import { useState } from 'react'
+import './App.css'; 
+import Card from './assets/Card'
 
 function App() {
   return (
     <div className='parent'>
-      <h1>this is the headings</h1>
+      component
     </div>
   )
 }

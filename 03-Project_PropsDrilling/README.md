@@ -1,4 +1,4 @@
-# React + Vite
+![alt text](Props_Project_Preview_Img.jpg)# React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
