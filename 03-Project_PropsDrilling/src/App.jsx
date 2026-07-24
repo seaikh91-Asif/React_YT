@@ -1,11 +1,12 @@
 import { useState } from 'react'
 import './App.css'; 
-import Card from './assets/Card'
+import Card from './Components/Card'
 
 function App() {
   return (
     <div className='parent'>
-      component
+      <Card/>
+      
     </div>
   )
 }
