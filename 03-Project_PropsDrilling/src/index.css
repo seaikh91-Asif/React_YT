@@ -12,12 +12,15 @@ body{
 }
 
 .parent{
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
   background-color: #111;
   padding: 30px;
   display: flex;
+  justify-content: center;
   gap: 30px;
+  flex-wrap: wrap;
+ 
 }
 
 .card{
@@ -74,7 +77,8 @@ body{
 
 .center h3 {
   font-size: 18px;
-  font-weight: 400;
+  font-weight: 600;
+  padding-bottom: 5px;
 }
 
 .center h2{
