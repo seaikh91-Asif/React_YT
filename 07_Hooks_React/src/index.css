@@ -115,6 +115,7 @@ code {
   margin: 50px;
   color: #fff;
   border-radius: 40px;
+ 
 }
 
 button{
@@ -125,4 +126,11 @@ button{
   border-radius: 40px;
   border: 1px solid #dadada;
 }
+
+.buttons{
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
 
