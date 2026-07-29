@@ -1,12 +1,17 @@
+import React from 'react'
 import RightCardContent from './RightCardContent'
 
 const RightCard = (props) => {
-    console.log(props.color);
-    
     return (
-        <div className='h-full shrink-0 overflow-hidden relative w-80 rounded-4xl'>
-            <img className='h-full w-full object-cover' src={props.img} alt="" />
-            <RightCardContent color={props.color} id={props.id} tag={props.tag} />
+        <div 
+            className='h-full shrink-0 overflow-hidden relative w-80 rounded-4xl p-4 flex flex-col justify-between'
+            style={{ backgroundColor: props.color || '#f3f4f6' }}
+        >
+            <RightCardContent 
+                img={props.img} 
+                tag={props.tag} 
+                intro={props.intro} 
+            />
         </div>
     )
 }

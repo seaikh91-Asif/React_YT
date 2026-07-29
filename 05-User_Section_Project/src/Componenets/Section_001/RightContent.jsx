@@ -1,18 +1,21 @@
 import React from 'react'
-import 'remixicon/fonts/remixicon.css'
-import RightCard from './RightCard'
 
-const RightContent = (props) => {
-  console.log(props.users.color);
-  
+const RightCardContent = (props) => {
   return (
-    <div id='right' className='h-full flex rounded-4xl overflow-x-auto flex-nowrap gap-10 p-6 w-2/3'>
-        {props.users.map(function(elem,idx){
-
-          return <RightCard key={idx} color={elem.color} id={idx} img={elem.img} tag={elem.tag} />
-        })}
+    <div className="flex flex-col gap-3 p-4">
+      <img 
+        src={props.img} 
+        alt={props.tag || 'card'} 
+        className="w-full h-48 object-cover rounded-xl"
+      />
+      <span className="text-xs font-semibold uppercase tracking-wider text-gray-500">
+        {props.tag}
+      </span>
+      <p className="text-sm text-gray-800">
+        {props.intro}
+      </p>
     </div>
   )
 }
 
-export default RightContent
+export default RightCardContent
