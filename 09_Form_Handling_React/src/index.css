@@ -109,3 +109,16 @@ code {
   padding: 4px 8px;
   background: var(--code-bg);
 }
+
+inupt{
+  width: 100px;
+  padding: 20px;
+  margin: 30px;
+}
+
+button{
+  
+  margin: 30px;
+}
+
+
