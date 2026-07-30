@@ -9,6 +9,7 @@ const HeroText = () => {
             <p className='text-xl font-medium text-gray-600' >Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi nulla totam praesentium at perferendis omnis. Unde ad qui doloribus?
             </p>
         </div>
+        
   )
 }
 
