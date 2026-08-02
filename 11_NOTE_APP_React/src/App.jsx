@@ -1,7 +1,6 @@
 import { useState } from 'react'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
@@ -22,7 +21,7 @@ function App() {
               placeholder='Enter Description...' 
               className='bg-[#3a3a3a] m-5 p-8 h-40 w-[92%] border-2 border-[#555555] rounded-lg box-border' />
 
-              <button className='bg-[#21c9b3] h-10 w-[92%] block mx-auto shadow-[0_4px_15px_rgba(33,201,179,0.4)] rounded-xl text-white font-bold hover:bg-[#1db5a1] transition-all duration-300 active:bg-[#159a88]'>
+              <button className='bg-[#21c9b3] h-12 w-[92%] block mx-auto shadow-[0_4px_15px_rgba(33,201,179,0.4)] rounded-xl text-white font-bold hover:bg-[#1db5a1] transition-all duration-300 active:bg-[#159a88]'>
                 Add Note
               </button>
             </div>
