@@ -9,6 +9,10 @@ function App() {
   const submitHandler = (e) => {
     e.preventDefault()
 
+    if(title.trim() === '' || details.trim() === ''){
+      return; 
+    }
+
     const newNote = {
       id: Date.now(), 
       title: title, 
@@ -25,16 +29,17 @@ function App() {
   return (
     <>
 
-      <div className='bg-[#151515] h-full w-full text-white  flex justify-center items-center p-7  '>
+      <div className='bg-[#151515] h-screen w-full text-white  flex justify-center items-center p-7  '>
           
-        <div className='p-7 bg-[#252525] h-auto w-150 rounded-4xl'>
+        <div className='p-7 bg-[#252525] h-auto w-full rounded-4xl'>
           <h1 className='text-center m-5 text-5xl font-bold text-white'>NOTES APP</h1>
           
           <form onSubmit = {(e) => {
             submitHandler(e)
           }}
           className='flex flex-col gap-2 '>
-            <div className='border-2 border-[#333333] rounded-lg flex flex-col h-95 w-full'>
+            <div className='flex justify-between gap-2'>
+              <div className='border-2 border-[#333333] rounded-lg flex flex-col h-95 w-[48%]'>
 
               <input type="text" 
               placeholder='Title' 
@@ -56,18 +61,19 @@ function App() {
               }}
               />
 
-              <button className='bg-[#21c9b3] h-12 w-[92%] block mx-auto shadow-[0_4px_15px_rgba(33,201,179,0.4)] rounded-xl text-white font-bold hover:bg-[#1db5a1] transition-all duration-300 active:bg-[#159a88]'>
+              <button className='bg-[#21c9b3] h-12 w-[92%] ml-5 block mx-auto shadow-[0_4px_15px_rgba(33,201,179,0.4)] rounded-xl text-white font-bold hover:bg-[#1db5a1] transition-all duration-300 active:bg-[#159a88]'>
                 Add Note
               </button>
             </div>
 
-          <div className='border-2 border-[#333333] rounded-lg flex flex-col h-65w-full mt-6'>
+          <div className='border-2 border-[#333333] rounded-lg flex flex-col h-95 w-[48%] overflow-y-auto'>
             <h4 className='p-4 text-xl font-bold text-white border-b-2 border-[#555555] w-[92%] mx-auto'>All Notes ({notes.length})</h4>
 
             <div className='flex flex-wrap gap-4'>
 
                {notes.map((note) => {
-                 <div key={note.id} className=' bg-[#3a3a3a] m-5 p-8 h-44 w-[92%] border-2 border-[#555555] rounded-lg box-border '>
+                  return (
+                     <div key={note.id} className=' bg-[#3a3a3a] m-5 p-8 h-44 w-[92%] border-2 border-[#555555] rounded-lg box-border '>
                   <h2 className='text-xl font-bold text-white '>{note.title}</h2>
                   <p className='mt-2'>{note.details}</p>
 
@@ -77,11 +83,13 @@ function App() {
                     <button className="bg-red-500 text-white px-6 py-2 rounded-md font-medium shadow-[0_4px_12px_rgba(239,68,68,0.4)] hover:bg-red-600 hover:shadow-[0_6px_15px_rgba(239,68,68,0.6)] active:scale-95 transition-all duration-300">Delete</button>
                   </div>
                 </div>
+                  )
                })}
 
             </div>
 
-          </div> 
+          </div>
+            </div> 
 
 
           </form>
