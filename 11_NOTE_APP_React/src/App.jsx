@@ -37,7 +37,6 @@ function App() {
 
   return (
     <>
-
       <div className='bg-[#151515] h-screen w-full text-white  flex justify-center items-center p-7  '>
           
         <div className='p-7 bg-[#252525] h-auto w-full rounded-4xl'>
@@ -99,13 +98,9 @@ function App() {
                 </div>
                   )
                })}
-
             </div>
-
           </div>
             </div> 
-
-
           </form>
         </div>
      </div>
