@@ -3,11 +3,20 @@ import { useState } from 'react'
 function App() {
 
   const [title, settitle] = useState(''); 
-  const [details, setDetails] = useState('')
+  const [details, setDetails] = useState('');
+  const [notes, setNotes] = useState([]); 
 
   const submitHandler = (e) => {
     e.preventDefault()
-    console.log(title, details); 
+
+    const newNote = {
+      id: Date.now(), 
+      title: title, 
+      details: details
+    }
+
+    setNotes([...notes, newNote]); 
+     
 
     settitle('')
     setDetails('')
@@ -52,25 +61,29 @@ function App() {
               </button>
             </div>
 
-            <div className='border-2 border-[#333333] rounded-lg flex flex-col h-65w-full mt-6'>
-              <h4 className='p-4 text-xl font-bold text-white border-b-2 border-[#555555] w-[92%] mx-auto  '>All Notes (1)</h4>
+          <div className='border-2 border-[#333333] rounded-lg flex flex-col h-65w-full mt-6'>
+            <h4 className='p-4 text-xl font-bold text-white border-b-2 border-[#555555] w-[92%] mx-auto'>All Notes ({notes.length})</h4>
 
-              <div className='flex flex-wrap gap-4'>
+            <div className='flex flex-wrap gap-4'>
 
-               <div className=' bg-[#3a3a3a] m-5 p-8 h-44 w-[92%] border-2 border-[#555555] rounded-lg box-border '>
-                <h2 className='text-xl font-bold text-white '>MERN</h2>
-                <p className='mt-2'>A Beautiful Website using mern stack.</p>
+               {notes.map((note) => {
+                 <div key={note.id} className=' bg-[#3a3a3a] m-5 p-8 h-44 w-[92%] border-2 border-[#555555] rounded-lg box-border '>
+                  <h2 className='text-xl font-bold text-white '>{note.title}</h2>
+                  <p className='mt-2'>{note.details}</p>
 
-                <div className='flex gap-4 mt-4'>
-                  <button className="bg-emerald-500 text-white px-6 py-2 rounded-md font-medium shadow-[0_4px_12px_rgba(16,185,129,0.4)] hover:bg-emerald-600 hover:shadow-[0_6px_15px_rgba(16,185,129,0.6)] active:scale-95 transition-all duration-300">Edit</button>
+                  <div className='flex gap-4 mt-4'>
+                    <button className="bg-emerald-500 text-white px-6 py-2 rounded-md font-medium shadow-[0_4px_12px_rgba(16,185,129,0.4)] hover:bg-emerald-600 hover:shadow-[0_6px_15px_rgba(16,185,129,0.6)] active:scale-95 transition-all duration-300">Edit</button>
 
-                  <button className="bg-red-500 text-white px-6 py-2 rounded-md font-medium shadow-[0_4px_12px_rgba(239,68,68,0.4)] hover:bg-red-600 hover:shadow-[0_6px_15px_rgba(239,68,68,0.6)] active:scale-95 transition-all duration-300">Delete</button>
+                    <button className="bg-red-500 text-white px-6 py-2 rounded-md font-medium shadow-[0_4px_12px_rgba(239,68,68,0.4)] hover:bg-red-600 hover:shadow-[0_6px_15px_rgba(239,68,68,0.6)] active:scale-95 transition-all duration-300">Delete</button>
+                  </div>
                 </div>
-              </div>
+               })}
 
             </div>
 
-          </div>
+          </div> 
+
+
           </form>
         </div>
      </div>
