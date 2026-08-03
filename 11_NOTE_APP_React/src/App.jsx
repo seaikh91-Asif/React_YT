@@ -21,10 +21,19 @@ function App() {
 
     setNotes([...notes, newNote]); 
      
-
     settitle('')
     setDetails('')
   }
+
+  const deletHandler = (id) => {
+  const coppyNote = [...notes]
+  
+  const index = coppyNote.findIndex((note) => note.id === id)
+  
+  coppyNote.splice(index, 1)
+  
+  setNotes(coppyNote)
+}
 
   return (
     <>
@@ -61,8 +70,8 @@ function App() {
               }}
               />
 
-              <button className='bg-[#21c9b3] h-12 w-[92%] ml-5 block mx-auto shadow-[0_4px_15px_rgba(33,201,179,0.4)] rounded-xl text-white font-bold hover:bg-[#1db5a1] transition-all duration-300 active:bg-[#159a88]'>
-                Add Note
+              <button className='bg-[#d4af37] h-12 w-[92%] ml-5 block mx-auto shadow-[0_4px_15px_rgba(212,175,55,0.4)] rounded-xl text-white       font-bold hover:bg-[#c19d2e] transition-all duration-300 active:bg-[#a8862a]'>
+                Save
               </button>
             </div>
 
@@ -73,14 +82,19 @@ function App() {
 
                {notes.map((note) => {
                   return (
-                     <div key={note.id} className=' bg-[#3a3a3a] m-5 p-8 h-44 w-[92%] border-2 border-[#555555] rounded-lg box-border '>
+                     <div key={note.id} className=' bg-[#3a3a3a] m-5 p-8 h-auto w-[92%] border-2 border-[#555555] rounded-lg box-border '>
                   <h2 className='text-xl font-bold text-white '>{note.title}</h2>
                   <p className='mt-2'>{note.details}</p>
 
                   <div className='flex gap-4 mt-4'>
-                    <button className="bg-emerald-500 text-white px-6 py-2 rounded-md font-medium shadow-[0_4px_12px_rgba(16,185,129,0.4)] hover:bg-emerald-600 hover:shadow-[0_6px_15px_rgba(16,185,129,0.6)] active:scale-95 transition-all duration-300">Edit</button>
+                    <button className="bg-[#059669] text-white px-6 py-2 rounded-md font-medium shadow-[0_4px_12px_rgba(5,150,105,0.4)] hover:bg-[#047857] hover:shadow-[0_6px_15px_rgba(5,150,105,0.6)] active:scale-95 transition-all duration-300">
+                      Edit
+                    </button>
 
-                    <button className="bg-red-500 text-white px-6 py-2 rounded-md font-medium shadow-[0_4px_12px_rgba(239,68,68,0.4)] hover:bg-red-600 hover:shadow-[0_6px_15px_rgba(239,68,68,0.6)] active:scale-95 transition-all duration-300">Delete</button>
+                    <button onClick={() => deletHandler(note.id)} 
+                      className="bg-[#e11d48] text-white px-6 py-2 rounded-md font-medium shadow-[0_4px_12px_rgba(225,29,72,0.4)] hover:bg-[#be123c] hover:shadow-[0_6px_15px_rgba(225,29,72,0.6)] active:scale-95 transition-all duration-300">
+                        Delete
+                    </button>
                   </div>
                 </div>
                   )
