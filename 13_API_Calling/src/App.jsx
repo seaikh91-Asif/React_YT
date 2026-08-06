@@ -4,19 +4,29 @@ import { useState } from 'react'
 
 function App() {
 
-  const [data, setdata] = useState([])
-
-  const getDate = async () => {
-   const response = await axios.get('https://picsum.photos/v2/list')
-
-
-   setdata(response.data); 
+  /*
+  NOTE: this code is for fetch api in react(how you can call api using fetch methode)
+  */ 
+  const getFetck = async  () => {
+    const response = await fetch('https://picsum.photos/200/300/?blur')
+    console.log(response); 
   }
+
+  
+  /*
+  NOTE: this code is for axios api in react(how you can call api using axios methode)
+  */
+  const getAxios = async () => {
+    const response = await axios.get('https://picsum.photos/200/300/?blur')
+    console.log(response)
+  }
+
+  
  
 
   return (
     <>
-      <button onClick={getDate}>get data</button> 
+      <button onClick={getData} >get data</button> 
     </>
   )
 }
