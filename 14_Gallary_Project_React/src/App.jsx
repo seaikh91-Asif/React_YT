@@ -16,7 +16,7 @@ function App() {
       getData()
     }, [index])
 
-  let printUserData = <h3 className='text-gray-500 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2'>loding...</h3>
+  let printUserData = <h3 className='text-gray-500 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-semibold'>Loding...</h3>
 
   if(userData.length > 0) {
     printUserData = userData.map(function(elem, idx) {
@@ -41,6 +41,7 @@ function App() {
 
       <div className='flex justify-center items-center gap-6 m-7'>
         <button 
+        
         onClick={ () => {
           if(index > 1) {
             setIndex(index - 1);
