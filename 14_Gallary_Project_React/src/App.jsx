@@ -48,14 +48,14 @@ function App() {
             setUserData([]); 
           }   
         }}
-        className='bg-amber-950 text-white rounded-2xl px-4 py-2.5 cursor-pointer active:scale-95'>Prev</button>
+        className='bg-amber-600 text-white rounded-2xl px-4 py-2.5 cursor-pointer active:scale-95'>Prev</button>
          <h1 className=''>Current Page: {index}</h1>
         <button 
         onClick={() => {
           setIndex(index + 1); 
           setUserData([]); 
         }}
-        className='bg-amber-950 text-white rounded-2xl px-4 py-2.5 cursor-pointer active:scale-95'>Next </button>
+        className='bg-amber-600 text-white rounded-2xl px-4 py-2.5 cursor-pointer active:scale-95'>Next </button>
       </div>
 
     </div>
